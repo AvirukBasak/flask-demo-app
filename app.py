@@ -12,12 +12,16 @@ from matrix import Matrix
 app = Flask(__name__)
 
 def get_params():
-    A = eval("%s" % request.args.get('A'))
-    B = eval("%s" % request.args.get('B'))
-    k = eval("%s" % request.args.get('k'))
-    A = Matrix(A) if A else None
-    B = Matrix(B) if B else None
-    k = k if k else None
+    A = "%s" % request.args.get('A')
+    B = "%s" % request.args.get('B')
+    k = "%s" % request.args.get('k')
+    try:
+        A = Matrix(eval(A)) if A != "None" else None
+        B = Matrix(eval(B)) if B != "None" else None
+        k = (float(k) if '.' in k else int(k)) if k != "None" else None
+    except Exception as e:
+        print(e)
+        return 'error: parameters: %s' % e
     return (A, B, k)
 
 @app.get('/')
@@ -103,4 +107,4 @@ def serve_dir(dir):
     return send_from_directory('res', dir + '/index.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

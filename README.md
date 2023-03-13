@@ -32,6 +32,6 @@ Some URL parameters may be numeric, while others may be matrices.
 Note how the syntax to pass a matrix is same as python syntax.
 
 This is made possible by passing the parameter into `eval`.
-This should open all sorts of security issues, so it'll be interesting.
+This should create all sorts of security issues, so it'll be interesting.
 
 Also note, even if some characters may be invalid in a parameter, modern browsers should automatically URL encode the data.
