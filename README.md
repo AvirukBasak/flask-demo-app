@@ -24,6 +24,9 @@ Some URL parameters may be numeric, while others may be matrices.
 - `/api/adj`: requires `A`: adjoint
 - `/api/inv`: requires `A`: inverse
 
+#### Hosted
+https://flamatapi.vercel.app
+
 #### Example
 - [`/api/det?A=[[1,3,4],[2,4,6],[7,6,8]]`](/api/det?A=[[1,3,4],[2,4,6],[7,6,8]])
 - [`/api/mul?A=[[1,0,0],[0,1,0],[0,0,1]]&k=6`](/api/mul?A=[[1,0,0],[0,1,0],[0,0,1]]&k=6)
